@@ -7,6 +7,7 @@
     <title>media query</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icon"rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
     <style>
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -16,10 +17,10 @@
 
     </style>
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1>Meu site</h1>
-        <i id="burguer" class="material-icons" onclick="clickMenu()">menu</i>
+        <i id="burguer" class="material-icons" onclick="clickMenu()">Menu</i>
         <menu id="itens">
             <ul>
                 <li><a href="#">Opção 1</a></li>
@@ -39,6 +40,14 @@
         </article>
     </main>
     <script>
+
+        function mudouTamanho{
+            if (window. innerHeight >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'nane'
+            }
+        }
         function clickMenu() {
            
             if (itens.style.display == 'block') {
